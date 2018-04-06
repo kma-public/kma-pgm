@@ -18,7 +18,7 @@ Your code should:
 - work according to spec
 - be clear (appropriate variable names, short functions, etc)
 - be elegant when it does not impair readability
-- rely on short functions with descriptive names and arguments
+- rely on short functions with descriptive names and well-chosen arguments
 
 
 # Question 1
@@ -27,11 +27,22 @@ Decrypt the ciphertext found in `q1_ciphertext.txt`. A Caesar cipher with a shif
 
 # Question 2
 
+The objective of this question is to write a function that can "break" a Caesar's cypher by frequency analysis.
+
 You are given the frequency distribution of letters in the english language in the tab-separated file `letter_distribution_english.txt`. 
+ 
 
-Find the most likely shift for the sentence found in `q2_ciphertext.txt`, assuming that the plaintext is an english sentence. What are the assumptions of your language model?
+We will take a probabalistic approach and define the most likely shift as the shift which maximises $P(shift | shifted~sentence)$.
 
-_Hint:_ the most likely shift corresponds to the most likely decrypted text under a simple language model using the letter distribution.
+Using Bayes rule, we know that $P(shift | shifted~sentence)$ is proportional to $P(shifted~sentence | shift) * P(shift)$. Assuming all shifts are equally likely, the most likely shift is therefore the one maximising:
+
+$$ P(shifted~sentence | shift) $$
+
+Assuming all letters in the shifted sentence are drawn for the letter distribution independently, we can treat the shifted sentence as a collection of independent letters, each having probability $frequency(letter)$.
+
+- Express $$ P(shifted~sentence | shift)$$ using the letters in the sentence and their frequencies in the english language
+- Write a function that finds the most likely shift for a given sentence, given the english language frequency distribution. You may need to make extra assumption.
+- Find the most likely shift for the sentence found in `q2_ciphertext.txt` and decrypt it.
 
 # Question 3
 
