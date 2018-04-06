@@ -12,6 +12,15 @@ We will consider positive shifts to shift left (i.e. a shift of 3 turns `a` into
 
 The shift loops around the alphabet. For example a shift of 3 turns `y` to `a` and a shift of -1 turns `a` into `z`.
 
+# Evaluation criteria
+
+Your code should:
+- work according to spec
+- be clear (appropriate variable names, short functions, etc)
+- be elegant when it does not impair readability
+- rely on short functions with descriptive names and arguments
+
+
 # Question 1
 
 Decrypt the ciphertext found in `q1_ciphertext.txt`. A Caesar cipher with a shift of 5 was used. You should obtain the sentence found in `q1_plaintext.txt`.
