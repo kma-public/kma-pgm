@@ -34,11 +34,11 @@ You are given the frequency distribution of letters in the english language in t
 
 We will take a probabalistic approach and define the most likely shift as the shift which maximises `P(shift | shifted sentence)`.
 
-Using Bayes rule, we know that `P(shift | shifted sentence)` is proportional to `(shifted sentence | shift) * P(shift)`. Assuming all shifts are equally likely, the most likely shift is therefore the one maximising `P(shifted~sentence | shift)`
+Using Bayes rule, we know that `P(shift | shifted sentence)` is proportional to `P(shifted sentence | shift) * P(shift)`. Assuming all shifts are equally likely, the most likely shift is therefore the one maximising `P(shifted sentence | shift)`
 
 Assuming all letters in the shifted sentence are drawn for the letter distribution independently, we can treat the shifted sentence as a collection of independent letters, each having probability `frequency[letter]`.
 
-- Express `P(shifted~sentence | shift)` using the letters in the sentence and their frequencies in the english language
+- Express `P(shifted sentence | shift)` using the letters in the sentence and their frequencies in the english language
 - Write a function that finds the most likely shift for a given sentence, given the english language frequency distribution. You may need to make extra assumption.
 - Find the most likely shift for the sentence found in `q2_ciphertext.txt` and decrypt it.
 
