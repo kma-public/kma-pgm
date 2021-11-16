@@ -20,6 +20,15 @@ Your code should:
 - be elegant when it does not impair readability
 - rely on short functions with descriptive names and well-chosen arguments
 
+# Note
+The probabilities that you may end up facing might be extremely close to 0.0. There may be some cases where python produces 0. My advice would be to use the Decimal() object from decimal when multiplying small probabilities.
+
+```
+from decimal import Decimal
+```
+
+
+
 
 # Question 1
 
